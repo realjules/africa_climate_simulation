@@ -18,6 +18,4 @@ The project will involve the following key components:
 
 The Digital Twin for Climate Resilience in Africa project has the potential to transform the way we understand and address climate change impacts on the continent. By leveraging digital twins and data integration, we can bridge the gaps in climate data, improve the accuracy of weather predictions, and support informed decision-making for climate adaptation and resilience.
 
-The project will be carried out by a multidisciplinary team of climate scientists, data experts, and software engineers, in close collaboration with local stakeholders in Rwanda. The expected duration of the Rwanda case study is 18 months, with a total budget of $1.5 million. The subsequent scaling to other African countries will be planned based on the outcomes and lessons learned from the Rwanda case study.
-
 By successfully implementing this project, we aim to contribute to the development of a more climate-resilient Africa, where communities and economies are better prepared to face the challenges posed by climate change.
