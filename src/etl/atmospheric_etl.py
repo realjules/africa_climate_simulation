@@ -1,6 +1,8 @@
 import cdsapi
 import xarray as xr
 import pandas as pd
+import netCDF4
+from matplotlib import pyplot as plt
 
 def extract_atmospheric_data():
     c = cdsapi.Client()
@@ -13,17 +15,26 @@ def extract_atmospheric_data():
             "month": "01",
             "day": "01",
             "time": "12:00",
+            # "format": "grib",
             "format": "netcdf",
             "area": [31, -3, 28.75, -1],  # Rwanda bounding box (N/W/S/E)
+            "grid": [0.25, 0.25],  # Grid resolution (latitude, longitude)
         },
         'temperature_data.nc'
     )
 
-    return 'temperature_data.nc'
+    # Load the NetCDF data using xarray
+    ds = netCDF4.Dataset(data)
+
+    plt.imshow(ds['Temp'][1,:,0,:])
+    plt.show()
+    # return ds
+
+    # return 'temperature_data.nc'
 
 def transform_atmospheric_data(data_file):
     # Load the NetCDF file using xarray
-    ds = xr.open_dataset(data_file)
+    ds = netCDF4.Dataset(data_file)
 
     # Extract the relevant data (temperature at 2 meters)
     temperature_data = ds["t2m"].to_dataframe().reset_index()
@@ -34,10 +45,22 @@ def load_atmospheric_data(df):
     output_file = "../data/processed/atmospheric_data.csv"
     df.to_csv(output_file, index=False)
 
-def run_atmospheric_etl():
-    data_file = extract_atmospheric_data()
-    transformed_data = transform_atmospheric_data(data_file)
-    load_atmospheric_data(transformed_data)
+# def run_atmospheric_etl():
+    # data_file = extract_atmospheric_data()
+    # transformed_data = transform_atmospheric_data(data_file)
+    # load_atmospheric_data(transformed_data)
 
+def run_atmospheric_etl():
+    dataset = extract_atmospheric_data()
+    print("Dataset information:")
+    print(dataset)
+
+    print("\nVariable information:")
+    print(dataset["t2m"])
+
+    # transformed_data = transform_atmospheric_data(dataset)
+    # load_atmospheric_data(transformed_data)
+
+    
 if __name__ == "__main__":
     run_atmospheric_etl()
