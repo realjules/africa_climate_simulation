@@ -74,7 +74,7 @@ def load_atmospheric_data(data):
     Loads the atmospheric temperature data into a CSV file.
     """
     if data is not None:
-        output_file = "data/processed/atmospheric_data_100_years.csv"
+        output_file = "data/processed/atmospheric_data.csv"
         data.to_csv(output_file, index=False)
         print(f"Data saved to {output_file}")
 
