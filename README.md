@@ -1,4 +1,4 @@
-# Digital Twin for Climate Resilience in Africa
+# Digital Twin for Climate Resilience in Africa (ongoing)
 
 Africa is a continent that faces significant challenges in terms of climate change and its impact on various sectors, such as agriculture, water resources, and public health. One of the major obstacles in addressing these challenges is the fragmented and often limited availability of climate data across the continent. This lack of comprehensive and reliable data hinders the ability to understand, predict, and adapt to changing weather patterns and extreme events.
 
